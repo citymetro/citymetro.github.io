@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "Tidak. City Metro tidak mengumpul, menyimpan atau berkongsi sebarang data peribadi, lokasi atau sejarah carian anda. Semua pengiraan dilakukan sepenuhnya pada peranti anda."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimanakah City Metro berbanding dengan aplikasi rasmi pengendali transit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tidak seperti aplikasi rasmi pengendali tunggal yang hanya meliputi laluan mereka sendiri dan memerlukan sambungan internet aktif, City Metro menyatukan semua laluan kereta api bandar ke dalam satu aplikasi 100% luar talian dengan perancangan laluan silang pengendali, anggaran tambang gabungan, dan panduan pintu keluar stesen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa menggunakan City Metro berbanding Google Maps untuk transit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "City Metro beroperasi 100% di luar talian tanpa memerlukan kad SIM, data perayauan, atau Wi-Fi. Ia juga menyediakan peta skematik transit khusus, direktori pintu keluar stesen, dan pengiraan tambang luar talian."
+            }
           }
         ]
       }
@@ -396,6 +412,49 @@
       color: #555;
       margin: 0;
     }
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .comparison-card li strong {
+      color: #111;
+    }
     #privacy-promise {
       background-color: #fafafa;
       border: 1px solid #eee;
@@ -438,12 +497,21 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
       footer,
       .lang-dropdown-menu a,
       .city-card p { color: #a0a0a0; }
+      .comparison-card li strong { color: #f1f5f9; }
+      .city-card,
+      .comparison-card,
+      #privacy-promise {
+        background-color: #1a1a1a;
+        border-color: #2a2a2a;
+      }
       .city-card-header .lines-tag { color: #38bdf8; }
       .lang-dropdown-menu a[aria-current="page"] { color: #ffffff; }
 
@@ -650,6 +718,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">Mengapa Pilih City Metro?</h2>
+      <p data-field="comparison-intro">Perbandingan City Metro dengan aplikasi rasmi pengendali tunggal dan aplikasi navigasi umum.</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro vs. Aplikasi Rasmi Pengendali (BTS &amp; MRT)</h3>
+          <ul>
+            <li><strong>Rangkaian Bersepadu:</strong> Merangkumi semua laluan kereta api dalam satu peta, berbanding aplikasi rasmi yang terhad kepada laluan masing-masing sahaja.</li>
+            <li><strong>100% Luar Talian:</strong> Carian laluan, jadual waktu dan tambang berfungsi tanpa internet atau kad SIM.</li>
+            <li><strong>Perancangan Rentas Pengendali:</strong> Mengira pertukaran tren dan anggaran tambang gabungan antara pelbagai pengendali dengan serta-merta.</li>
+            <li><strong>Tanpa Log Masuk atau Iklan:</strong> Buka dan guna serta-merta tanpa perlu akaun keahlian atau pop-up promosi.</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro vs. Aplikasi Peta Umum (Google Maps &amp; Apple Maps)</h3>
+          <ul>
+            <li><strong>Sifar Data &amp; Jimat Bateri:</strong> Berfungsi sepenuhnya di luar talian tanpa pakej perayauan data.</li>
+            <li><strong>Peta Skematik Khusus:</strong> Gambar rajah transit yang jelas dan mudah dibaca bersama paparan peta jalan.</li>
+            <li><strong>Direktori Pintu Keluar Stesen:</strong> Carian luar talian untuk nombor pintu keluar tepat ke pusat beli-belah, tarikan dan hotel.</li>
+            <li><strong>Privasi Terpelihara:</strong> Tiada penjejakan lokasi atau pengumpulan sejarah carian.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -668,6 +764,14 @@
       <details>
         <summary>Rangkaian transit apakah yang disokong?</summary>
         <p>City Metro menyokong semua laluan di Kuala Lumpur (Rapid KL LRT Kelana Jaya/Ampang/Sri Petaling, MRT Laluan Kajang & Putrajaya, KL Monorel, KTM Komuter, ERL KLIA Ekspres/Transit, BRT) dan Bangkok (BTS Skytrain, MRT, ARL, SRT, BRT).</p>
+      </details>
+      <details>
+        <summary>Bagaimanakah City Metro berbanding dengan aplikasi rasmi pengendali transit?</summary>
+        <p>Tidak seperti aplikasi rasmi pengendali tunggal yang hanya meliputi laluan mereka sendiri dan memerlukan sambungan internet aktif, City Metro menyatukan semua laluan kereta api bandar ke dalam satu aplikasi 100% luar talian dengan perancangan laluan silang pengendali, anggaran tambang gabungan, dan panduan pintu keluar stesen.</p>
+      </details>
+      <details>
+        <summary>Mengapa menggunakan City Metro berbanding Google Maps untuk transit?</summary>
+        <p>City Metro beroperasi 100% di luar talian tanpa memerlukan kad SIM, data perayauan, atau Wi-Fi. Ia juga menyediakan peta skematik transit khusus, direktori pintu keluar stesen, dan pengiraan tambang luar talian.</p>
       </details>
       <details>
         <summary>Adakah aplikasi City Metro percuma untuk dimuat turun?</summary>

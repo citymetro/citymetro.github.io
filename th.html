@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "ไม่มี City Metro ไม่เก็บ บันทึก หรือแชร์ข้อมูลส่วนบุคคล ประวัติตำแหน่ง หรือการค้นหาเส้นทางของคุณ การประมวลผลทั้งหมดเกิดขึ้นบนอุปกรณ์ของคุณเท่านั้น"
             }
+          },
+          {
+            "@type": "Question",
+            "name": "แอป รถไฟฟ้ากรุงเทพฯ - City Metro แตกต่างจากแอปทางการของ BTS หรือ MRT อย่างไร?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "แอปทางการของผู้ให้บริการ (เช่น THE SKYTRAINs สำหรับ BTS หรือ Bangkok MRT สำหรับสายสีน้ำเงิน/ม่วง) จะครอบคลุมเฉพาะสายของตนเองและต้องใช้อินเทอร์เน็ต แต่ Bangkok City Metro รวมทุกสายในกรุงเทพฯ ทั้ง BTS, MRT สีน้ำเงิน/ม่วง/เหลือง/ชมพู, Airport Rail Link, SRT สายสีแดง และสายสีทอง ไว้ในแอปเดียว ใช้งานออฟไลน์ได้ 100% พร้อมคำนวณเส้นทางและค่าโดยสารข้ามระบบทันที"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ทำไมควรใช้ City Metro แทน Google Maps ในการเดินทางด้วยรถไฟฟ้า?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "City Metro ทำงานแบบออฟไลน์ 100% โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ตหรือเปิดโรมมิ่ง มีผังแผนที่รถไฟฟ้าที่อ่านง่าย ชัดเจน ระบุข้อมูลทางออกไปยังห้างสรรพสินค้าและสถานที่สำคัญ และคำนวณค่าโดยสารรถไฟฟ้าระหว่างระบบได้อย่างแม่นยำ"
+            }
           }
         ]
       }
@@ -396,6 +412,49 @@
       color: #555;
       margin: 0;
     }
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .comparison-card li strong {
+      color: #111;
+    }
     #privacy-promise {
       background-color: #fafafa;
       border: 1px solid #eee;
@@ -438,12 +497,21 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
       footer,
       .lang-dropdown-menu a,
       .city-card p { color: #a0a0a0; }
+      .comparison-card li strong { color: #f1f5f9; }
+      .city-card,
+      .comparison-card,
+      #privacy-promise {
+        background-color: #1a1a1a;
+        border-color: #2a2a2a;
+      }
       .city-card-header .lines-tag { color: #38bdf8; }
       .lang-dropdown-menu a[aria-current="page"] { color: #ffffff; }
 
@@ -650,6 +718,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">ทำไมต้องเลือก รถไฟฟ้ากรุงเทพฯ - City Metro?</h2>
+      <p data-field="comparison-intro">เปรียบเทียบ City Metro กับแอปทางการของผู้ให้บริการเดี่ยวและแอปแผนที่ทั่วไป</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro เทียบกับ แอปทางการ (THE SKYTRAINs &amp; Bangkok MRT)</h3>
+          <ul>
+            <li><strong>รวมทุกโครงข่ายในแอปเดียว:</strong> ครอบคลุมทั้ง BTS, MRT (สีน้ำเงิน/ม่วง/เหลือง/ชมพู), ARL, SRT สายสีแดง และสายสีทอง ขณะที่แอปทางการจะดูได้เฉพาะสายของตนเอง</li>
+            <li><strong>ออฟไลน์ 100%:</strong> ค้นหาเส้นทาง ดูตารางเวลา และค่าโดยสารได้โดยไม่ต้องใช้อินเทอร์เน็ตหรือซิมการ์ด</li>
+            <li><strong>คำนวณเส้นทางข้ามสาย:</strong> คำนวณจุดต่อขบวนและประมาณการค่าโดยสารรวมระหว่างต่างผู้ให้บริการได้ทันที</li>
+            <li><strong>ไม่มีโฆษณา ไม่ต้องลงทะเบียน:</strong> เปิดใช้งานได้ทันที ไม่ต้องสมัครสมาชิกหรือกรอกเบอร์โทรศัพท์</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro เทียบกับ แอปแผนที่ทั่วไป (Google Maps &amp; Apple Maps)</h3>
+          <ul>
+            <li><strong>ไม่ต้องใช้เน็ต ประหยัดแบตเตอรี่:</strong> ทำงานแบบออฟไลน์สมบูรณ์แบบ เหมาะสำหรับผู้เดินทางที่ไม่มีสัญญาณเน็ต</li>
+            <li><strong>แผนที่ผังระบบรถไฟฟ้าโดยเฉพาะ:</strong> สลับดูได้ทั้งผังเส้นทางที่ดูง่าย และแผนที่จริงตามพิกัดภูมิศาสตร์</li>
+            <li><strong>ข้อมูลทางออกสถานีครบถ้วน:</strong> ค้นหาหมายเลขทางออกที่เชื่อมต่อห้างสรรพสินค้า โรงแรม และสถานที่ท่องเที่ยวได้ทันที</li>
+            <li><strong>เป็นส่วนตัว 100%:</strong> ไม่มีการติดตามตำแหน่งหรือบันทึกประวัติการค้นหา</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -668,6 +764,14 @@
       <details>
         <summary>City Metro รองรับระบบรถไฟฟ้าสายใดบ้าง?</summary>
         <p>City Metro รองรับทุกสายในกรุงเทพฯ (BTS สุขุมวิท/สีลม/สายสีทอง, MRT สายสีน้ำเงิน/ม่วง/เหลือง/ชมพู, Airport Rail Link, SRT สายสีแดง, BRT) และกัวลาลัมเปอร์ (Rapid KL LRT, MRT, Monorail, KTM Komuter, ERL, BRT)</p>
+      </details>
+      <details>
+        <summary>แอป รถไฟฟ้ากรุงเทพฯ - City Metro แตกต่างจากแอปทางการของ BTS หรือ MRT อย่างไร?</summary>
+        <p>แอปทางการของผู้ให้บริการ (เช่น THE SKYTRAINs สำหรับ BTS หรือ Bangkok MRT สำหรับสายสีน้ำเงิน/ม่วง) จะครอบคลุมเฉพาะสายของตนเองและต้องใช้อินเทอร์เน็ต แต่ Bangkok City Metro รวมทุกสายในกรุงเทพฯ ทั้ง BTS, MRT สีน้ำเงิน/ม่วง/เหลือง/ชมพู, Airport Rail Link, SRT สายสีแดง และสายสีทอง ไว้ในแอปเดียว ใช้งานออฟไลน์ได้ 100% พร้อมคำนวณเส้นทางและค่าโดยสารข้ามระบบทันที</p>
+      </details>
+      <details>
+        <summary>ทำไมควรใช้ City Metro แทน Google Maps ในการเดินทางด้วยรถไฟฟ้า?</summary>
+        <p>City Metro ทำงานแบบออฟไลน์ 100% โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ตหรือเปิดโรมมิ่ง มีผังแผนที่รถไฟฟ้าที่อ่านง่าย ชัดเจน ระบุข้อมูลทางออกไปยังห้างสรรพสินค้าและสถานที่สำคัญ และคำนวณค่าโดยสารรถไฟฟ้าระหว่างระบบได้อย่างแม่นยำ</p>
       </details>
       <details>
         <summary>แอป City Metro ดาวน์โหลดฟรีหรือไม่?</summary>

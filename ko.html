@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "아닙니다. 시티 메트로는 어떠한 개인정보, 이동 기록, 검색 기록도 수집하거나 서버로 전송하지 않습니다. 모든 계산은 사용자의 기기 내에서만 안전하게 실행됩니다."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "방콕 시티 메트로 앱은 BTS나 MRT 공식 앱과 무엇이 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "운영사별 공식 앱(BTS의 THE SKYTRAINs, MRT의 Bangkok MRT)은 해당 노선만 지원하고 인터넷 연결이 필요하지만, 방콕 시티 메트로는 BTS, MRT(블루·퍼플·옐로우·핑크), 공항철도 ARL, SRT 레드라인, 골드라인까지 방콕의 모든 노선을 하나의 앱에 통합했습니다. 100% 완전 오프라인으로 환승 경로와 통합 운임 계산을 지원합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "방콕 대중교통 이용 시 구글 맵 대신 시티 메트로를 사용해야 하는 이유는 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "시티 메트로는 유심이나 로밍 없이 100% 오프라인으로 작동하여 공항 도착 직후나 데이터가 터지지 않는 지하철 역사에서도 즉시 사용할 수 있습니다. 또한 한눈에 들어오는 전용 노선도, 상세한 역 출구 안내(쇼핑몰·관광지), 환승 운임 계산을 제공합니다."
+            }
           }
         ]
       }
@@ -397,6 +413,49 @@
       color: #555;
       margin: 0;
     }
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .comparison-card li strong {
+      color: #111;
+    }
     #privacy-promise {
       background-color: #fafafa;
       border: 1px solid #eee;
@@ -439,12 +498,21 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
       footer,
       .lang-dropdown-menu a,
       .city-card p { color: #a0a0a0; }
+      .comparison-card li strong { color: #f1f5f9; }
+      .city-card,
+      .comparison-card,
+      #privacy-promise {
+        background-color: #1a1a1a;
+        border-color: #2a2a2a;
+      }
       .city-card-header .lines-tag { color: #38bdf8; }
       .lang-dropdown-menu a[aria-current="page"] { color: #ffffff; }
 
@@ -651,6 +719,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">왜 Bangkok City Metro인가요?</h2>
+      <p data-field="comparison-intro">단일 운영사 공식 앱 및 범용 지도 앱과의 비교</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro vs. 운영사 공식 앱 (THE SKYTRAINs &amp; Bangkok MRT)</h3>
+          <ul>
+            <li><strong>모든 노선 통합 지원:</strong> BTS, MRT(블루/퍼플/옐로우/핑크), 공항철도 ARL, SRT 레드라인, 골드라인을 단 하나의 노선도에 통합.</li>
+            <li><strong>100% 완전 오프라인:</strong> 데이터나 Wi-Fi 없이도 전체 경로 탐색, 시간표, 운임 조회가 즉시 가능.</li>
+            <li><strong>운영사 간 통합 환승 및 요금 계산:</strong> 서로 다른 철도 운영사 간의 환승역과 총 운임을 한 번에 계산.</li>
+            <li><strong>로그인 및 광고 없음:</strong> 회원가입이나 광고 팝업 없이 앱 실행 즉시 사용 가능.</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro vs. 범용 지도 앱 (Google Maps &amp; Apple Maps)</h3>
+          <ul>
+            <li><strong>데이터 무제한 절약 &amp; 배터리 최적화:</strong> 오프라인 환경에 최적화되어 해외 로밍 데이터 없이 안심 이용.</li>
+            <li><strong>직관적인 전용 노선도:</strong> 가독성 높은 다이어그램 노선도와 실제 지리적 지도 뷰를 자유롭게 전환.</li>
+            <li><strong>상세한 역 출구 정보:</strong> 주요 쇼핑몰, 호텔, 관광지로 연결되는 정확한 출구 번호를 오프라인 제공.</li>
+            <li><strong>철저한 개인정보 보호:</strong> 위치 추적이나 검색 기록 저장을 일절 수행하지 않음.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -669,6 +765,14 @@
       <details>
         <summary>어떤 도시와 노선들을 지원하나요?</summary>
         <p>방콕(BTS 수쿰빗선·실롬선·골드라인, MRT 블루라인·퍼플라인·옐로우라인·핑크라인, 공항철도 ARL, SRT 레드라인, BRT)과 쿠알라룸푸르(Rapid KL LRT, MRT 카장선·푸트라자야선, 모노레일, KTM 통근열차, KLIA 공항철도) 노선을 완벽 지원합니다.</p>
+      </details>
+      <details>
+        <summary>방콕 시티 메트로 앱은 BTS나 MRT 공식 앱과 무엇이 다른가요?</summary>
+        <p>운영사별 공식 앱(BTS의 THE SKYTRAINs, MRT의 Bangkok MRT)은 해당 노선만 지원하고 인터넷 연결이 필요하지만, 방콕 시티 메트로는 BTS, MRT(블루·퍼플·옐로우·핑크), 공항철도 ARL, SRT 레드라인, 골드라인까지 방콕의 모든 노선을 하나의 앱에 통합했습니다. 100% 완전 오프라인으로 환승 경로와 통합 운임 계산을 지원합니다.</p>
+      </details>
+      <details>
+        <summary>방콕 대중교통 이용 시 구글 맵 대신 시티 메트로를 사용해야 하는 이유는 무엇인가요?</summary>
+        <p>시티 메트로는 유심이나 로밍 없이 100% 오프라인으로 작동하여 공항 도착 직후나 데이터가 터지지 않는 지하철 역사에서도 즉시 사용할 수 있습니다. 또한 한눈에 들어오는 전용 노선도, 상세한 역 출구 안내(쇼핑몰·관광지), 환승 운임 계산을 제공합니다.</p>
       </details>
       <details>
         <summary>시티 메트로 앱은 무료로 다운로드할 수 있나요?</summary>

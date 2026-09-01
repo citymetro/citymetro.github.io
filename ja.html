@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "いいえ。City Metroは個人情報、位置情報の履歴、検索履歴などを一切収集・保存・送信しません。すべての計算はお使いの端末内で完結します。"
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Bangkok City Metroアプリは公式BTSやMRTアプリとどう違いますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "公式アプリ（BTS公式THE SKYTRAINsやBEM MRT）は自社路線のみの対応でネット接続が必要ですが、Bangkok City MetroはBTS、MRT（ブルー・パープル・イエロー・ピンク）、ARL空港線、SRTレッドライン、ゴールドラインの全路線を1つのアプリに統合。100%完全オフラインで複数事業者をまたぐルート案内や運賃計算が可能です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "バンコクでGoogleマップの代わりにCity Metroを使うメリットは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "City MetroはSIMカードやローミング通信なしの完全オフラインで動作し、見やすい路線図、詳細な駅出口案内（商業施設・観光地）、事業者間をまたぐ正確な運賃計算に対応しています。"
+            }
           }
         ]
       }
@@ -396,6 +412,49 @@
       color: #555;
       margin: 0;
     }
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .comparison-card li strong {
+      color: #111;
+    }
     #privacy-promise {
       background-color: #fafafa;
       border: 1px solid #eee;
@@ -438,12 +497,21 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
       footer,
       .lang-dropdown-menu a,
       .city-card p { color: #a0a0a0; }
+      .comparison-card li strong { color: #f1f5f9; }
+      .city-card,
+      .comparison-card,
+      #privacy-promise {
+        background-color: #1a1a1a;
+        border-color: #2a2a2a;
+      }
       .city-card-header .lines-tag { color: #38bdf8; }
       .lang-dropdown-menu a[aria-current="page"] { color: #ffffff; }
 
@@ -650,6 +718,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">Bangkok City Metro を選ぶ理由</h2>
+      <p data-field="comparison-intro">単一事業者の公式アプリや一般的な地図アプリとの違い</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro と 公式アプリ（THE SKYTRAINs &amp; Bangkok MRT）の比較</h3>
+          <ul>
+            <li><strong>全路線を1つのアプリに統合:</strong> BTS、MRT（ブルー/パープル/イエロー/ピンク）、ARL空港線、SRTレッドライン、ゴールドラインを網羅。</li>
+            <li><strong>100%完全オフライン:</strong> 通信・SIMカード不要でルート検索・時刻表・運賃計算が可能。</li>
+            <li><strong>複数事業者の乗り換え・合算運賃計算:</strong> 異なる鉄道会社間の乗り換えルートと合計運賃を瞬時に算出。</li>
+            <li><strong>会員登録・広告なし:</strong> アプリを開いてすぐに使え、広告ポップアップやログイン不要。</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro と 一般的な地図アプリ（Google Maps &amp; Apple Maps）の比較</h3>
+          <ul>
+            <li><strong>通信量ゼロ・バッテリー節約:</strong> 完全オフラインで動作し、電波が届きにくい地下や空港到着直後でも安心。</li>
+            <li><strong>見やすい専用路線図:</strong> 視認性の高いダイアグラム路線図と地理マップを自在に切り替え可能。</li>
+            <li><strong>駅出口・周辺ガイド:</strong> 各出口番号と直結するショッピングモールやホテル、観光地をオフライン収録。</li>
+            <li><strong>プライバシー保護:</strong> 位置情報の追跡や検索履歴の収集を一切行いません。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -668,6 +764,14 @@
       <details>
         <summary>どの都市や路線に対応していますか？</summary>
         <p>バンコク（BTSスクンビット線・シーロム線・ゴールドライン、MRTブルーライン・パープルライン・イエローライン・ピンクライン、ARL空港線、SRTレッドライン、BRT）およびクアラルンプール（Rapid KL LRT、MRT、KLモノレール、KTM、ERL空港特急）に対応しています。</p>
+      </details>
+      <details>
+        <summary>Bangkok City Metroアプリは公式BTSやMRTアプリとどう違いますか？</summary>
+        <p>公式アプリ（BTS公式THE SKYTRAINsやBEM MRT）は自社路線のみの対応でネット接続が必要ですが、Bangkok City MetroはBTS、MRT（ブルー・パープル・イエロー・ピンク）、ARL空港線、SRTレッドライン、ゴールドラインの全路線を1つのアプリに統合。100%完全オフラインで複数事業者をまたぐルート案内や運賃計算が可能です。</p>
+      </details>
+      <details>
+        <summary>バンコクでGoogleマップの代わりにCity Metroを使うメリットは何ですか？</summary>
+        <p>City MetroはSIMカードやローミング通信なしの完全オフラインで動作し、見やすい路線図、詳細な駅出口案内（商業施設・観光地）、事業者間をまたぐ正確な運賃計算に対応しています。</p>
       </details>
       <details>
         <summary>アプリのダウンロードは無料ですか？</summary>

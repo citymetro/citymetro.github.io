@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "不会。City Metro 不会收集、保存或上传您的任何个人隐私、位置轨迹或搜索历史。所有路线计算均仅在您的设备本地安全完成。"
             }
+          },
+          {
+            "@type": "Question",
+            "name": "曼谷 City Metro 应用与 BTS、MRT 官方应用有什么区别？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不同于仅覆盖自家线路且需要网络连接的单营运商官方应用（如 BTS 的 THE SKYTRAINs 或 MRT 的 Bangkok MRT），曼谷 City Metro 将曼谷所有轨道交通（BTS 素坤逸线/是隆线/金线、MRT 蓝线/紫线/黄线/粉红线、机场快线 ARL、SRT 红线及 BRT）整合在单张地图中，支持 100% 完全离线使用、跨运营商换乘与票价综合计算，以及双语车站出口指南。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "在曼谷乘坐地铁/轻轨时，为什么推荐使用 City Metro 而不是 Google 地图？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "City Metro 专为 100% 离线设计，无需购买当地 SIM 卡、无需境外流量漫游或 Wi-Fi 即可流畅运行，特别适合机场刚落地或地下无信号环境。此外还提供清晰的专用拓扑线路图、精确的车站出口地标指引及离线跨系统综合票价计算。"
+            }
           }
         ]
       }
@@ -396,6 +412,49 @@
       color: #555;
       margin: 0;
     }
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .comparison-card li strong {
+      color: #111;
+    }
     #privacy-promise {
       background-color: #fafafa;
       border: 1px solid #eee;
@@ -438,12 +497,21 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
       footer,
       .lang-dropdown-menu a,
       .city-card p { color: #a0a0a0; }
+      .comparison-card li strong { color: #f1f5f9; }
+      .city-card,
+      .comparison-card,
+      #privacy-promise {
+        background-color: #1a1a1a;
+        border-color: #2a2a2a;
+      }
       .city-card-header .lines-tag { color: #38bdf8; }
       .lang-dropdown-menu a[aria-current="page"] { color: #ffffff; }
 
@@ -650,6 +718,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">为什么选择曼谷 City Metro？</h2>
+      <p data-field="comparison-intro">了解 City Metro 与单运营商官方应用及通用地图应用的优势对比</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro 对比 官方应用（THE SKYTRAINs &amp; Bangkok MRT）</h3>
+          <ul>
+            <li><strong>全网一体化覆盖：</strong> 一张图囊括 BTS、MRT（蓝/紫/黄/粉线）、机场快线 ARL、SRT 红线与金线，告别在多个官方应用之间繁琐切换。</li>
+            <li><strong>100% 完全离线：</strong> 路线规划、时刻表与票价查询全流程无需网络与 SIM 卡即可秒开使用。</li>
+            <li><strong>跨系统换乘与综合票价：</strong> 即时计算不同轨道运营商之间的最优换乘节点与全程票价预估。</li>
+            <li><strong>无广告、免登录：</strong> 打开即用，无需注册手机号或会员账号，无营销弹窗干扰。</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro 对比 通用地图（Google Maps &amp; Apple Maps）</h3>
+          <ul>
+            <li><strong>零流量消耗与省电：</strong> 纯本地离线引擎，无网络信号或飞行模式下依然流畅运作。</li>
+            <li><strong>专用拓扑线路图：</strong> 高对比度、结构清晰的轨道线路图与真实地理地图一键切换。</li>
+            <li><strong>详细车站出口地标：</strong> 离线索引每个出站口直达的购物中心、热门景点与酒店。</li>
+            <li><strong>严密隐私保护：</strong> 绝不收集、追踪或上传任何位置轨迹与搜索记录。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -668,6 +764,14 @@
       <details>
         <summary>应用支持哪些城市与轨道线路？</summary>
         <p>支持曼谷全线（BTS 素坤逸线/是隆线/金线、MRT 蓝线/紫线/黄线/粉红线、机场快线 ARL、SRT 暗红/浅红线、BRT）以及吉隆坡全线（Rapid KL LRT、MRT 加影线/布城线、KL 单轨列车、KTM 城际列车、KLIA 机场快线、BRT）。</p>
+      </details>
+      <details>
+        <summary>曼谷 City Metro 应用与 BTS、MRT 官方应用有什么区别？</summary>
+        <p>不同于仅覆盖自家线路且需要网络连接的单营运商官方应用（如 BTS 的 THE SKYTRAINs 或 MRT 的 Bangkok MRT），曼谷 City Metro 将曼谷所有轨道交通（BTS 素坤逸线/是隆线/金线、MRT 蓝线/紫线/黄线/粉红线、机场快线 ARL、SRT 红线及 BRT）整合在单张地图中，支持 100% 完全离线使用、跨运营商换乘与票价综合计算，以及双语车站出口指南。</p>
+      </details>
+      <details>
+        <summary>在曼谷乘坐地铁/轻轨时，为什么推荐使用 City Metro 而不是 Google 地图？</summary>
+        <p>City Metro 专为 100% 离线设计，无需购买当地 SIM 卡、无需境外流量漫游或 Wi-Fi 即可流畅运行，特别适合机场刚落地或地下无信号环境。此外还提供清晰的专用拓扑线路图、精确的车站出口地标指引及离线跨系统综合票价计算。</p>
       </details>
       <details>
         <summary>City Metro 是免费下载的应用吗？</summary>

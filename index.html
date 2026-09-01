@@ -111,6 +111,22 @@
               "@type": "Answer",
               "text": "No. City Metro apps do not collect, store, or share any personal data, location history, or trip searches. All calculations are performed entirely on your device."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Bangkok City Metro compare to official BTS and MRT apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike official single-operator apps (such as THE SKYTRAINs for BTS or Bangkok MRT for MRT Blue/Purple lines) which only cover their own respective networks and require an active internet connection, Bangkok City Metro unifies all Bangkok rail lines—BTS Skytrain, MRT Blue, Purple, Yellow and Pink lines, Airport Rail Link (ARL), SRT Red lines, and Gold Line—into a single 100% offline app with cross-operator route and fare calculations, station exit guides, and zero data tracking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why use Bangkok City Metro instead of Google Maps for Bangkok transit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bangkok City Metro operates 100% offline without requiring a SIM card, cellular roaming, or Wi-Fi, making it ideal for tourists arriving at the airport or underground commuters without cell reception. It also provides dedicated high-contrast schematic transit maps, exact station exit landmark directories, and offline cross-operator ticket fare calculations."
+            }
           }
         ]
       }
@@ -469,6 +485,57 @@
       margin: 0;
     }
 
+    /* Comparison Section */
+    #comparison {
+      padding-top: 1.5rem;
+    }
+
+    #comparison p[data-field="comparison-intro"] {
+      font-size: 1rem;
+      color: #555;
+      margin: -0.75rem 0 1.5rem;
+      line-height: 1.5;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .comparison-card {
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .comparison-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+    }
+
+    .comparison-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.925rem;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    .comparison-card li strong {
+      color: #111;
+    }
+
     /* Privacy Promise Box */
     #privacy-promise {
       background-color: #fafafa;
@@ -562,6 +629,8 @@
       .store-button-label,
       [data-field="screenshot-caption"],
       [data-component="feature-item"] p[data-field="feature-description"],
+      #comparison p[data-field="comparison-intro"],
+      .comparison-card li,
       #privacy-promise p,
       #faq details p,
       #download p[data-field="cta-description"],
@@ -569,6 +638,10 @@
       .lang-dropdown-menu a,
       .city-card p {
         color: #a0a0a0;
+      }
+
+      .comparison-card li strong {
+        color: #f1f5f9;
       }
 
       .city-card-header .lines-tag {
@@ -613,6 +686,7 @@
       }
 
       .city-card,
+      .comparison-card,
       #privacy-promise {
         background-color: #1a1a1a;
         border-color: #2a2a2a;
@@ -795,6 +869,34 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section id="comparison" data-section="comparison">
+      <h2 data-field="section-title">Why Bangkok City Metro?</h2>
+      <p data-field="comparison-intro">How Bangkok City Metro compares to single-operator transit apps and general navigation maps.</p>
+      
+      <div class="comparison-grid">
+        <article class="comparison-card">
+          <h3>City Metro vs. Official Apps (THE SKYTRAINs &amp; Bangkok MRT)</h3>
+          <ul>
+            <li><strong>Unified Network:</strong> Covers all lines (BTS, MRT Blue/Purple/Yellow/Pink, ARL, SRT Red, Gold Line) in one map, while official apps only cover their own individual lines.</li>
+            <li><strong>100% Offline:</strong> Full route finding, schedules, and fares work without cellular data or Wi-Fi. Official apps require an active internet connection.</li>
+            <li><strong>Cross-Operator Routing:</strong> Instantly calculates transfers and combined ticket fares between different train operators.</li>
+            <li><strong>No Logins or Ads:</strong> Instant launch without loyalty accounts, phone number registrations, or promotional popups.</li>
+          </ul>
+        </article>
+
+        <article class="comparison-card">
+          <h3>City Metro vs. General Maps (Google Maps &amp; Apple Maps)</h3>
+          <ul>
+            <li><strong>Zero Data &amp; Battery Friendly:</strong> Works completely offline without SIM cards or roaming data packages.</li>
+            <li><strong>Dedicated Schematic Map:</strong> High-contrast, easy-to-read transit diagram alongside street map overlays.</li>
+            <li><strong>Station Exit Directories:</strong> Instant offline lookups for exact exit numbers mapped to shopping malls, attractions, and hotels.</li>
+            <li><strong>Private by Design:</strong> Zero location tracking or search history collection.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- Privacy Section -->
     <section id="privacy-section">
       <div id="privacy-promise">
@@ -813,6 +915,14 @@
       <details>
         <summary>Which transit networks and cities are supported?</summary>
         <p>City Metro offers dedicated apps for Bangkok (BTS Skytrain, MRT Blue, Purple, Yellow & Pink lines, Airport Rail Link, SRT Red lines, Gold Line, BRT) and Kuala Lumpur (Rapid KL LRT, MRT Kajang & Putrajaya lines, KL Monorail, KTM Komuter, ERL KLIA Ekspres/Transit, BRT).</p>
+      </details>
+      <details>
+        <summary>How does Bangkok City Metro compare to official BTS and MRT apps?</summary>
+        <p>Unlike official single-operator apps (such as THE SKYTRAINs for BTS or Bangkok MRT for MRT Blue/Purple lines) which only cover their own respective networks and require an active internet connection, Bangkok City Metro unifies all Bangkok rail lines—BTS Skytrain, MRT Blue, Purple, Yellow and Pink lines, Airport Rail Link (ARL), SRT Red lines, and Gold Line—into a single 100% offline app with cross-operator route and fare calculations, station exit guides, and zero data tracking.</p>
+      </details>
+      <details>
+        <summary>Why use Bangkok City Metro instead of Google Maps for Bangkok transit?</summary>
+        <p>Bangkok City Metro operates 100% offline without requiring a SIM card, cellular roaming, or Wi-Fi, making it ideal for tourists arriving at the airport or underground commuters without cell reception. It also provides dedicated high-contrast schematic transit maps, exact station exit landmark directories, and offline cross-operator ticket fare calculations.</p>
       </details>
       <details>
         <summary>Are City Metro apps free to download?</summary>
